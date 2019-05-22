@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="false" thread-count="1">
+	<parameter name="browser" value="ch"></parameter>
+
+ 	<!-- <test name="LoginErrCheck">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.LoginErrCheck_Script" />
+		</classes>
+	</test>
+	
+ 	 <test name="Logout">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Logout_Script" />	
+		</classes>
+	</test> 
+	
+	<test name="createDoc">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+		<class name="Scripts.Login_Script" />
+			<class name="Scripts.CreateDoc_Script" />
+			
+		</classes>
+	</test> --> 
+	
+	<!--  <test name="Plan">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.PlansNPricing_Script" />
+			
+		</classes>
+	</test> -->
+	
+	<test name="Form16">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Form16Sign_Script" />	
+		</classes>
+	</test>
+
+	<test name="Form16ChooseTemp">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Form16ChooseTemp_Script" />	
+		</classes> 
+	</test>
+	
+	 <test name="Encrypt">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Encrypt_Script" />
+		</classes>
+	</test>
+
+	  <test name="Decrypt">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Decrypt_Script" />
+		</classes>
+	</test>
+	
+	 <test name="DecryptMultipleFiles">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.DecryptMultipleFiles_Script" />
+		</classes>
+	</test> 
+
+	<!-- <test name="AnyDoc">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AnyDoc_Script" />
+		</classes>
+	</test>
+	
+	<test name="AnyDocChooseTemp">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AnyDocChooseTemp_Script" />
+		</classes>
+	</test>
+	
+	<test name="AnyDoceSign">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AnyDoceSign_Script" />
+		</classes>
+	</test>
+	
+	 <test name="BulkDoc">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.BulkDoc_Script" />
+		</classes>
+	</test> 
+
+	  <test name="Docstore">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Docstore_Script" />
+		</classes>
+	</test>
+
+	<test name="Settings">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Setting_Script" />
+		</classes>
+	</test>-->
+
+	 <!-- <test name="AdminSetting">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AdminSettings_Script" />
+		</classes>
+	</test> 
+	
+	 <test name="workflowDocUpld">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.WrkflwsDocUpld_Script" />		
+		</classes>
+	</test>
+	
+	  <test name="ManageWfFlexi">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.ManageWrkflwFlexi_Script" />
+		</classes>
+	</test>  
+	
+	 <test name="workflow">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Workflows_Script" />	
+		</classes>
+	</test>
+	
+    <test name="ManageWfActivity">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.ManageWrkflwActivity_Script" />
+		</classes>
+	</test> -->
+	
+	<!--  <test name="reports">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.Reports_Script" />
+		</classes>
+	</test>
+	
+	<test name="wfExcel">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AdminWFExternalExcel_Script" />
+		</classes>
+	</test> 
+
+	<test name="wfExcelDraft">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.AdminWFExternalExcelDraft_Script" />
+		</classes>
+	</test>-->
+	<!--<class name="Scripts.Dashboard_Script"/> -->
+</suite> <!-- Suite -->

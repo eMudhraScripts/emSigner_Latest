@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="6" total="14" passed="8">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Suite" duration-ms="137713" started-at="2019-05-16T04:59:20Z" finished-at="2019-05-16T05:01:37Z">
+    <groups>
+      <group name="SMK">
+        <method signature="LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" class="Scripts.LoginErrCheck_Script"/>
+        <method signature="Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@33cb5951]" name="Login" class="Scripts.Login_Script"/>
+        <method signature="Logout_Script.Logout()[pri:1, instance:Scripts.Logout_Script@365c30cc]" name="Logout" class="Scripts.Logout_Script"/>
+        <method signature="CreateDoc_Script.createDocument()[pri:1, instance:Scripts.CreateDoc_Script@b59d31]" name="createDocument" class="Scripts.CreateDoc_Script"/>
+        <method signature="Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@4df828d7]" name="Login" class="Scripts.Login_Script"/>
+      </group> <!-- SMK -->
+      <group name="REG">
+        <method signature="LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" class="Scripts.LoginErrCheck_Script"/>
+        <method signature="Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@33cb5951]" name="Login" class="Scripts.Login_Script"/>
+        <method signature="Logout_Script.Logout()[pri:1, instance:Scripts.Logout_Script@365c30cc]" name="Logout" class="Scripts.Logout_Script"/>
+        <method signature="CreateDoc_Script.createDocument()[pri:1, instance:Scripts.CreateDoc_Script@b59d31]" name="createDocument" class="Scripts.CreateDoc_Script"/>
+        <method signature="Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@4df828d7]" name="Login" class="Scripts.Login_Script"/>
+      </group> <!-- REG -->
+    </groups>
+    <test name="LoginErrCheck" duration-ms="20042" started-at="2019-05-16T04:59:20Z" finished-at="2019-05-16T04:59:40Z">
+      <class name="Scripts.LoginErrCheck_Script">
+        <test-method status="PASS" signature="launch(java.lang.String)[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="launch" is-config="true" duration-ms="5549" started-at="2019-05-16T04:59:20Z" finished-at="2019-05-16T04:59:25Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ch]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" duration-ms="3380" started-at="2019-05-16T04:59:26Z" data-provider="login_page" finished-at="2019-05-16T04:59:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=NA, Script_Name=LoginWithoutEmail, TC_ID=t001, Expected_Result=Email ID is required, Pwd=NA, Actual Result=Email ID is required}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrCheck -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="report" is-config="true" duration-ms="2" started-at="2019-05-16T04:59:29Z" finished-at="2019-05-16T04:59:29Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginErrCheck status=SUCCESS method=LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" duration-ms="1327" started-at="2019-05-16T04:59:29Z" data-provider="login_page" finished-at="2019-05-16T04:59:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=NA, Script_Name=LoginWithoutPwd, TC_ID=t002, Expected_Result=Please enter Password, Pwd=NA, Actual Result=Please enter Password}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrCheck -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="report" is-config="true" duration-ms="1" started-at="2019-05-16T04:59:31Z" finished-at="2019-05-16T04:59:31Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginErrCheck status=SUCCESS method=LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" duration-ms="3615" started-at="2019-05-16T04:59:31Z" data-provider="login_page" finished-at="2019-05-16T04:59:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=sin@gmail.com, Script_Name=InvalidEmail, TC_ID=t003, Expected_Result=Invalid Email ID, Pwd=111111, Actual Result=Invalid Email ID}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrCheck -->
+        <test-method status="PASS" signature="LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="LoginErrCheck" duration-ms="3083" started-at="2019-05-16T04:59:34Z" data-provider="login_page" finished-at="2019-05-16T04:59:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=testem048@gmail.com, Script_Name=InvalidPwd, TC_ID=t004, Expected_Result=Invalid password., Pwd=123, Actual Result=Invalid password.}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- LoginErrCheck -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="report" is-config="true" duration-ms="0" started-at="2019-05-16T04:59:34Z" finished-at="2019-05-16T04:59:34Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginErrCheck status=SUCCESS method=LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="report" is-config="true" duration-ms="1" started-at="2019-05-16T04:59:37Z" finished-at="2019-05-16T04:59:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=LoginErrCheck status=SUCCESS method=LoginErrCheck_Script.LoginErrCheck(java.util.Map)[pri:1, instance:Scripts.LoginErrCheck_Script@2a40cd94] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="closeapp()[pri:0, instance:Scripts.LoginErrCheck_Script@2a40cd94]" name="closeapp" is-config="true" duration-ms="2438" started-at="2019-05-16T04:59:37Z" finished-at="2019-05-16T04:59:40Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeapp -->
+      </class> <!-- Scripts.LoginErrCheck_Script -->
+    </test> <!-- LoginErrCheck -->
+    <test name="Logout" duration-ms="18423" started-at="2019-05-16T04:59:40Z" finished-at="2019-05-16T04:59:58Z">
+      <class name="Scripts.Logout_Script">
+        <test-method status="PASS" signature="Logout()[pri:1, instance:Scripts.Logout_Script@365c30cc]" name="Logout" duration-ms="2594" started-at="2019-05-16T04:59:55Z" finished-at="2019-05-16T04:59:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Logout -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.Logout_Script@365c30cc]" name="report" is-config="true" duration-ms="0" started-at="2019-05-16T04:59:58Z" finished-at="2019-05-16T04:59:58Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Logout status=SUCCESS method=Logout_Script.Logout()[pri:1, instance:Scripts.Logout_Script@365c30cc] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+      </class> <!-- Scripts.Logout_Script -->
+      <class name="Scripts.Login_Script">
+        <test-method status="PASS" signature="launch(java.lang.String)[pri:0, instance:Scripts.Login_Script@33cb5951]" name="launch" is-config="true" duration-ms="4179" started-at="2019-05-16T04:59:40Z" finished-at="2019-05-16T04:59:44Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ch]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@33cb5951]" name="Login" duration-ms="11446" started-at="2019-05-16T04:59:44Z" data-provider="valid_login" finished-at="2019-05-16T04:59:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=testem048@gmail.com, Script_Name=ValidLogin, TC_ID=t001, Expected_Result=Valid credentials, Pwd=111111, Actual Result=null}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.Login_Script@33cb5951]" name="report" is-config="true" duration-ms="1" started-at="2019-05-16T04:59:55Z" finished-at="2019-05-16T04:59:55Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Login status=SUCCESS method=Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@33cb5951] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="closeapp()[pri:0, instance:Scripts.Login_Script@33cb5951]" name="closeapp" is-config="true" duration-ms="136" started-at="2019-05-16T04:59:58Z" finished-at="2019-05-16T04:59:58Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeapp -->
+      </class> <!-- Scripts.Login_Script -->
+    </test> <!-- Logout -->
+    <test name="createDoc" duration-ms="99228" started-at="2019-05-16T04:59:58Z" finished-at="2019-05-16T05:01:37Z">
+      <class name="Scripts.CreateDoc_Script">
+        <test-method status="PASS" signature="createDocument()[pri:1, instance:Scripts.CreateDoc_Script@b59d31]" name="createDocument" duration-ms="83693" started-at="2019-05-16T05:00:14Z" finished-at="2019-05-16T05:01:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createDocument -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.CreateDoc_Script@b59d31]" name="report" is-config="true" duration-ms="1" started-at="2019-05-16T05:01:37Z" finished-at="2019-05-16T05:01:37Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=createDocument status=SUCCESS method=CreateDoc_Script.createDocument()[pri:1, instance:Scripts.CreateDoc_Script@b59d31] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+      </class> <!-- Scripts.CreateDoc_Script -->
+      <class name="Scripts.Login_Script">
+        <test-method status="PASS" signature="createreport()[pri:0, instance:Scripts.Login_Script@4df828d7]" name="createreport" is-config="true" duration-ms="219" started-at="2019-05-16T04:59:19Z" finished-at="2019-05-16T04:59:20Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createreport -->
+        <test-method status="PASS" signature="launch(java.lang.String)[pri:0, instance:Scripts.Login_Script@4df828d7]" name="launch" is-config="true" duration-ms="4931" started-at="2019-05-16T04:59:58Z" finished-at="2019-05-16T05:00:03Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[ch]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launch -->
+        <test-method status="PASS" signature="Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@4df828d7]" name="Login" duration-ms="10463" started-at="2019-05-16T05:00:03Z" data-provider="valid_login" finished-at="2019-05-16T05:00:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{Order=1, Execute_Flag=Y, Uname=testem048@gmail.com, Script_Name=ValidLogin, TC_ID=t001, Expected_Result=Valid credentials, Pwd=111111, Actual Result=null}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method status="PASS" signature="report(org.testng.ITestResult)[pri:0, instance:Scripts.Login_Script@4df828d7]" name="report" is-config="true" duration-ms="0" started-at="2019-05-16T05:00:14Z" finished-at="2019-05-16T05:00:14Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[[TestResult name=Login status=SUCCESS method=Login_Script.Login(java.util.Map)[pri:1, instance:Scripts.Login_Script@4df828d7] output={null}]]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- report -->
+        <test-method status="PASS" signature="closeapp()[pri:0, instance:Scripts.Login_Script@4df828d7]" name="closeapp" is-config="true" duration-ms="89" started-at="2019-05-16T05:01:37Z" finished-at="2019-05-16T05:01:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeapp -->
+      </class> <!-- Scripts.Login_Script -->
+    </test> <!-- createDoc -->
+  </suite> <!-- Suite -->
+</testng-results>

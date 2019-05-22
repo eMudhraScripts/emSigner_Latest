@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="Scripts.AdminSettings_Script">
+        <methods>
+          <include name="createmanageWorkflow"/>
+          <include name="manageUsers"/>
+          <include name="createreport"/>
+          <include name="manageDept"/>
+          <include name="settingPage"/>
+          <include name="launch"/>
+          <include name="closeapp"/>
+          <include name="activityLog"/>
+          <include name="report"/>
+        </methods>
+      </class> <!-- Scripts.AdminSettings_Script -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
