@@ -23,7 +23,7 @@ public class pf_PlansNPricingPage extends pf_genericmethods {
 	
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav navbar-nav navbar-right']/li[4]/button") WebElement planNPrice;
 	@FindBy(how = How.XPATH, using = "//ul[@class='nav navbar-nav navbar-right']/li[4]/div/a[1]") WebElement emSigner;
-	@FindBy(how = How.XPATH, using = "//*[@id=\"planTabContent2\"]/div[1]/div/div[2]/a") WebElement basicGetNow;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"planTabContent3\"]/div[1]/div/div[2]/a") WebElement basicGetNow;
 	@FindBy(how = How.ID, using = "ddlbilling") WebElement billFreqncy;
 	@FindBy(how = How.ID, using = "noOfsignaturs") WebElement noOfSigners;
 	@FindBy(how = How.ID, using = "msgcontent") WebElement msgcontent;
@@ -52,7 +52,7 @@ public class pf_PlansNPricingPage extends pf_genericmethods {
 	@FindBy(how = How.ID, using = "ddlShipState") WebElement ddlShipState;
 	@FindBy(how = How.ID, using = "ShipPincode") WebElement shipPincode;
 	@FindBy(how = How.ID, using = "Captcha") WebElement Captcha;
-	@FindBy(how = How.ID, using = "btnPurchase") WebElement btnPurchase;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"frmsubscription\"]/div[2]/div/div/div/div[1]/div/div[2]/div/div[3]/div[14]/input") WebElement btnPurchase;
 	
 	public pf_PlansNPricingPage(WebDriver driver){
 

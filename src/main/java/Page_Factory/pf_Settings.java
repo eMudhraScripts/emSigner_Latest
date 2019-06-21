@@ -131,10 +131,10 @@ public class pf_Settings extends pf_genericmethods {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"frmappSettings\"]/div/div[3]/div[6]/a") public WebElement manageAdhocUsers;
 	//@FindBy(how = How.ID, using = "btnAdhocUser") WebElement crteAdhocUser;
 	@FindBy(how = How.XPATH, using = "//a[text()='Create New']") WebElement crteAdhocUser;
-	@FindBy(how = How.ID, using = "btncancel") WebElement createAdhocUserCncl;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"frmuser\"]/div[3]/section/div/div[3]/div[2]/div[3]/div[2]/a") WebElement createAdhocUserCncl;
 	@FindBy(how = How.ID, using = "txtname") WebElement adhocUserName;
 	@FindBy(how = How.XPATH, using = "//section[@class='box']/div/div[4]/div/div[2]/input[1]") WebElement saveBtnAdhocUser;
-	@FindBy(how = How.XPATH, using = "//section[@class='box']/div/div[4]/div/div[2]/input[2]") WebElement cancelBtnAdhocUser;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"frmuser\"]/div[3]/section/div/div[3]/div[2]/div[3]/div[2]/a") WebElement cancelBtnAdhocUser;
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'You’re done! New user')]") public WebElement saveBtnManageUserMsg;
 	//search adhoc User
 	@FindBy(how = How.XPATH, using = "//*[@id=\"pager_left\"]/table/tbody/tr/td[2]") WebElement searchAdhocUserBtn;
@@ -425,8 +425,9 @@ public class pf_Settings extends pf_genericmethods {
 		log.info("Manage Adhoc Users Page is displayed");
 		cl_click(crteAdhocUser);
 		et.log(LogStatus.PASS,"Create Adhoc User button is clicked- passed");
+		Thread.sleep(3000);
 		cl_click(createAdhocUserCncl);
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		et.log(LogStatus.PASS,"Cancel button is clicked- passed");
 		cl_click(crteAdhocUser);
 		et.log(LogStatus.PASS,"Create Adhoc user button is clicked- passed");

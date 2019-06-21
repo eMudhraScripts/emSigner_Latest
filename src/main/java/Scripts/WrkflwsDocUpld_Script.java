@@ -17,6 +17,5 @@ public class WrkflwsDocUpld_Script extends Basefunctions  {
 		pf_WorkflowNew wrkflw=new pf_WorkflowNew(w);
 
 		wrkflw.selectWorkflow1(w);
-
 	}
 }

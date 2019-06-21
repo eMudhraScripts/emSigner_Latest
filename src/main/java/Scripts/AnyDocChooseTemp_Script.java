@@ -21,7 +21,7 @@ public class AnyDocChooseTemp_Script extends Basefunctions {
 		et =  es.startTest("Upload Document choose Template");
 		File f3=new File(Utility.getpropertydetails("PDF"));
 		String pdfpath=f3.getAbsolutePath();
-			anyDoc.anyDocumentChooseTemp(pdfpath);
+		anyDoc.anyDocumentChooseTemp(pdfpath);
 	}
 
 }

@@ -350,7 +350,7 @@ public class pf_AnyDocPage extends pf_genericmethods {
 		String templateName=Utility.getpropertydetails("AnyDocTemplateName");
 		try {
 		cl_entertext(templateSearch, templateName);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		et.log(LogStatus.PASS,"Searched with template name in Choose template page- passed");
 		cl_click(w.findElement(By.xpath(selecttemplateSearch.replace("#DELIM#",String.valueOf(templateName)))));
 		Thread.sleep(2000);

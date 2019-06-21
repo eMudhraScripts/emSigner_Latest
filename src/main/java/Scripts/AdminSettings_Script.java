@@ -23,7 +23,7 @@ public class AdminSettings_Script extends Basefunctions {
 		set.settings();
 	} 
 
-	@Test(dataProvider= "admin_setting",dataProviderClass=Dataproviders.dp_login.class,enabled=true,priority=3,groups={"SMK","REG"})
+	/*@Test(dataProvider= "admin_setting",dataProviderClass=Dataproviders.dp_login.class,enabled=true,priority=3,groups={"SMK","REG"})
 	public void manageDept(Map hm) throws Exception{
 		String scriptname=hm.get("Script_Name").toString();
 		tcid = hm.get("TC_ID").toString();
@@ -54,7 +54,7 @@ public class AdminSettings_Script extends Basefunctions {
 			et =  es.startTest("Manage Department: "+tcid);
 			set.deleteDeptBtn(scriptname,sheetName); 
 		}
-	}
+	}*/
 	
 	@Test(dataProvider= "admin_setting",dataProviderClass=Dataproviders.dp_login.class,enabled=true,priority=4,groups={"SMK","REG"})
 	public void manageUsers(Map hm) throws Exception{
@@ -76,29 +76,21 @@ public class AdminSettings_Script extends Basefunctions {
 			}
 	}
 	
-	@Test(enabled=true,priority=5,groups={"SMK","REG"})
+	/*@Test(enabled=true,priority=5,groups={"SMK","REG"})
 	public void activityLog() throws Exception{
 		
 		pf_AdminSettings set=new pf_AdminSettings(w);
 		et =  es.startTest("Manage Users: "+tcid);
 		set.activity_log();
-	}
+	}*/
 	
-	@Test(enabled=true,priority=6,groups={"SMK","REG"})
+	/*@Test(enabled=true,priority=6,groups={"SMK","REG"})
 	public void createmanageWorkflow() throws Exception{
 		pf_AdminSettings set=new pf_AdminSettings(w);
 		String wfname=Utility.getpropertydetails("WorkflowName");
 		set.create_manage_workflows(wfname);
 		set.manage_workflows();
-	}
-	
-//	@Test(enabled=true,priority=7,groups={"SMK","REG"})
-//	public void manageWorkflow() throws Exception{
-//		pf_AdminSettings set=new pf_AdminSettings(w);
-//		String wfname=Utility.getpropertydetails("WorkflowName");
-//		set.create_manage_workflows(wfname);
-//		set.manage_workflows();
-//	}
+	}*/
 	
 	/*@Test(enabled=true,priority=7,groups={"SMK","REG"})
 	public void subscription() throws Exception{
