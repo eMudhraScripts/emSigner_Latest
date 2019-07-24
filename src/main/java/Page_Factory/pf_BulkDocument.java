@@ -27,6 +27,8 @@ public class pf_BulkDocument extends pf_genericmethods {
 
 	@FindBy(how = How.ID, using = "Offline") WebElement bulkDoc;
 
+	//choose template dropdown
+	@FindBy(how = How.ID, using = "ConfigViewModel_ddlProfile") WebElement choseTempDropdwn;
 	@FindBy(how = How.ID, using = "btncontinue") WebElement continuebutton;
 
 	@FindBy(how = How.ID, using = "btnpdfupload") WebElement createTempbutton;
@@ -155,7 +157,7 @@ public class pf_BulkDocument extends pf_genericmethods {
 		if(exp.startsWith("Sorry!Template name")) {
 			System.out.println("Screenshot Taken");
 			b.getScreenshot();
-			Assert.fail();
+			//Assert.fail();
 		}	
 
 	}
@@ -220,4 +222,45 @@ public class pf_BulkDocument extends pf_genericmethods {
 	}
 
 
+	public void chooseTemplate() throws Exception {
+		log.info("--Form16_Signing Page--");
+		log.info("Click on continue button by selecting template");
+		JavascriptExecutor js = (JavascriptExecutor)w;
+		js.executeScript("arguments[0].scrollIntoView();",bulkDoc);
+		cl_click(bulkDoc);
+		Thread.sleep(3000);
+		et.log(LogStatus.PASS,"Form16 Signing is clicked- passed");
+		Select s=new Select(choseTempDropdwn);
+		String temp=Utility.getpropertydetails("bulkdocTemplateName");
+		s.selectByVisibleText(temp);
+		Thread.sleep(2000);
+		cl_click(continuebutton);
+		et.log(LogStatus.PASS,"Continue button is clicked after choosing template- passed");
+		log.info("Continue button is clicked");
+		cl_click(sourceFolder);
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\Bulk\\bulksource\\source.exe");
+		Thread.sleep(8000);
+		cl_click(destFolder);
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\Bulk\\bulkDest\\dest.exe");
+		Thread.sleep(8000);
+		
+		cl_click(browseContinueBtn);
+		et.log(LogStatus.PASS,"Continue button of Browse documents page by selecting A, B,dest,CSV folder- passed");
+		Thread.sleep(5000);
+		int ss = signs.size();
+		Random r = new Random();
+		int n = r.nextInt(ss);
+		if(n==0) {
+			n=n+1;
+		}
+		cl_click(w.findElement(By.xpath(sign.replace("#DELIM#",String.valueOf(n)))));
+		Thread.sleep(4000);
+		log.info("Sign is picked");
+		cl_click(signBtn);
+		log.info("Sign button is clicked");
+		Thread.sleep(20000);
+		et.log(LogStatus.PASS,"Sign button is clicked- passed");
+		b.getScreenshot();
+		
+	}
 }

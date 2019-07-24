@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="false" thread-count="1">
 	<parameter name="browser" value="ch"></parameter>
 
- 	<!-- <test name="LoginErrCheck">
+ 	  <test name="LoginErrCheck">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -12,9 +12,9 @@
 		<classes>
 			<class name="Scripts.LoginErrCheck_Script" />
 		</classes>
-	</test>
+	</test> 
 	
- 	 <test name="Logout">
+ 	<test name="Logout">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -37,9 +37,22 @@
 			<class name="Scripts.CreateDoc_Script" />
 			
 		</classes>
-	</test> --> 
+	</test>
 	
-	<!--  <test name="Plan">
+	<test name="createDoceSign">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+		<class name="Scripts.Login_Script" />
+			<class name="Scripts.CreateDoceSign_Script" />
+			
+		</classes>
+	</test>
+	
+	 <!--<test name="Plan">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -49,7 +62,7 @@
 			<class name="Scripts.PlansNPricing_Script" />
 			
 		</classes>
-	</test> -->
+	</test>-->
 	
 	<test name="Form16">
 		<groups>
@@ -63,7 +76,7 @@
 		</classes>
 	</test>
 
-	<test name="Form16ChooseTemp">
+	 <test name="Form16ChooseTemp">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -73,7 +86,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.Form16ChooseTemp_Script" />	
 		</classes> 
-	</test>
+	</test> 
 	
 	 <test name="Encrypt">
 		<groups>
@@ -111,7 +124,7 @@
 		</classes>
 	</test> 
 
-	<!-- <test name="AnyDoc">
+	<test name="AnyDoc">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -121,7 +134,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.AnyDoc_Script" />
 		</classes>
-	</test>
+	</test> 
 	
 	<test name="AnyDocChooseTemp">
 		<groups>
@@ -157,8 +170,20 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.BulkDoc_Script" />
 		</classes>
-	</test> 
-
+	</test>
+	
+	 <test name="BulkDocChooseTemp">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.BulkDocChooseTemp_Script" />	
+		</classes> 
+	</test>
+	
 	  <test name="Docstore">
 		<groups>
 			<run>
@@ -171,7 +196,7 @@
 		</classes>
 	</test>
 
-	<test name="Settings">
+	 <test name="Settings">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -181,9 +206,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.Setting_Script" />
 		</classes>
-	</test>-->
+	</test>
 
-	 <!-- <test name="AdminSetting">
+	  <test name="AdminSetting">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -193,9 +218,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.AdminSettings_Script" />
 		</classes>
-	</test> 
+	</test>
 	
-	 <test name="workflowDocUpld">
+	  <test name="workflowDocUpld">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -205,7 +230,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.WrkflwsDocUpld_Script" />		
 		</classes>
-	</test>
+	</test> 
 	
 	  <test name="ManageWfFlexi">
 		<groups>
@@ -231,6 +256,18 @@
 		</classes>
 	</test>
 	
+	<test name="workfloweSign">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.WorkflowseSign_Script" />	
+		</classes>
+	</test>
+	
     <test name="ManageWfActivity">
 		<groups>
 			<run>
@@ -241,7 +278,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.ManageWrkflwActivity_Script" />
 		</classes>
-	</test> -->
+	</test> 
 	
 	<!--  <test name="reports">
 		<groups>

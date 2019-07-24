@@ -55,7 +55,7 @@ public class pf_AdminSettings extends pf_genericmethods {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"li_412_anchor\"]") WebElement workflowselection;
 	//String workflowlist = "//div[@id='jstree']/ul/li[#DELIM#]/a";
 	String wflist = "//section[@class='box']/div/div/div/div[3]/div/ul/li[#DELIM#]/a/i[1]";
-
+	@FindAll({@FindBy(how = How.XPATH, using = "//section[@class='box']/div/div/div/div/div[4]/div/ul/li")}) public List<WebElement> WFSearchList1;
 	String Userwflist = "//section[@class='box']/div/div/div/div/div[4]/div/ul/li[#DELIM#]/a/i[1]";
 	@FindBy(how = How.XPATH, using = "//*[@id=\"pager_left\"]/table/tbody/tr/td[2]") public WebElement searchBtn;
 
@@ -393,15 +393,25 @@ public class pf_AdminSettings extends pf_genericmethods {
 				Thread.sleep(2000);
 				cl_click(manageUserSaveBtn);
 				Thread.sleep(2000);
-				String exp="You’re done! New user "+username+" successfully created";
+				//String exp="You’re done! New user "+username+" successfully created";
+				String exp=wfSuccessBtnMsg.getText();
+				Thread.sleep(1000);
 				System.out.println("Manage Department creation message: "+exp);
 				cl_click(okBtn);
 				Thread.sleep(5000);
 
+				
+				/*int n=WFSearchList1.size();
+				System.out.println("ran" +n);*/
 				Random r = new Random();
 				int randomValue = r.nextInt(WFSearchList.size());
-				cl_click(b.w.findElement(By.xpath(Userwflist.replace("#DELIM#",String.valueOf(randomValue)))));
+				if(randomValue==0) {
+					randomValue=randomValue+1;
+				}
 				System.out.println("randomValue" +randomValue);
+				//cl_click(b.w.findElement(By.xpath(Userwflist.replace("#DELIM#",String.valueOf(randomValue)))));
+				cl_click(b.w.findElement(By.xpath(wflist.replace("#DELIM#",String.valueOf(randomValue)))));
+				//System.out.println("randomValue" +randomValue);
 				//WFSearchList.get(randomValue).click();
 				Thread.sleep(2000);
 				log.info("Manage User-Random workflow is selected");
@@ -523,6 +533,8 @@ public class pf_AdminSettings extends pf_genericmethods {
 			Thread.sleep(2000);
 			et.log(LogStatus.PASS,"Activate Flexiform is clicked- passed");
 			log.info("Activate Flexiform is clicked");
+			cl_click(savebutn);
+			Thread.sleep(2000);
 			cl_click(popupokbtn);
 			et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
 		}catch(Exception e) {
@@ -637,12 +649,12 @@ public class pf_AdminSettings extends pf_genericmethods {
 				int siz1 = containercount.size();
 				System.out.println("Containers : "+ siz1);
 				for(int k=1;k<=siz1;k++) {
-					System.out.println("k: "+k);
+					//System.out.println("k: "+k);
 					//						int l=1;
 					WebElement v = b.w.findElement(By.xpath(boxvalue.replace("#DELIM#",String.valueOf(k))));
-					System.out.println("V : "+v);
+					//System.out.println("V : "+v);
 					String sv = v.getAttribute("field_type");
-					System.out.println("SV is : "+sv);
+					//System.out.println("SV is : "+sv);
 					if(sv.equalsIgnoreCase("Signature")) {
 
 						WebElement v1 = b.w.findElement(By.xpath(boxvalue1.replace("#DELIM#",String.valueOf(k))));
@@ -672,6 +684,8 @@ public class pf_AdminSettings extends pf_genericmethods {
 				Thread.sleep(2000);
 				et.log(LogStatus.PASS,"Activate Flexiform is clicked- passed");
 				log.info("Activate Flexiform is clicked");
+				cl_click(savebutn);
+				Thread.sleep(2000);
 				cl_click(popupokbtn);
 				Thread.sleep(1000);
 				et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
@@ -699,7 +713,7 @@ public class pf_AdminSettings extends pf_genericmethods {
 				for(int k=1;k<=siz1;k++) {
 					WebElement v = b.w.findElement(By.xpath(boxvalue.replace("#DELIM#",String.valueOf(k))));
 					String sv = v.getAttribute("field_type");
-					System.out.println("SV is : "+sv);
+					//System.out.println("SV is : "+sv);
 					if(sv.equalsIgnoreCase("Signature")) {
 						WebElement v1 = b.w.findElement(By.xpath(boxvalue1.replace("#DELIM#",String.valueOf(k))));
 						Thread.sleep(5000);
@@ -716,6 +730,8 @@ public class pf_AdminSettings extends pf_genericmethods {
 						cl_click(activateflexiform);
 						Thread.sleep(2000);
 						et.log(LogStatus.PASS,"Activate Flexiform is clicked- passed");
+						cl_click(savebutn);
+						Thread.sleep(2000);
 						cl_click(popupokbtn);
 						et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
 					}

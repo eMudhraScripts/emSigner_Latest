@@ -62,7 +62,8 @@ public class pf_WorkflowNew extends pf_genericmethods {
 	@FindBy(how = How.ID, using = "btnSignatorySave") WebElement applyBtn; 
 	//continue button
 	@FindBy(how = How.ID, using = "btnValue") WebElement continueBtn;
-
+	
+	@FindBy(how = How.ID, using = "esignature") WebElement esignature;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"div-dsign\"]/label") public WebElement dsign;
 	@FindAll({@FindBy(how = How.XPATH, using = "//div[@class='sign-font-block']/ul/li")}) public List<WebElement> signs;
 
@@ -71,7 +72,10 @@ public class pf_WorkflowNew extends pf_genericmethods {
 	@FindBy(how = How.ID, using = "btnFinalSend") WebElement btnFinalSend;
 	@FindBy(how = How.ID, using = "msgcontent") WebElement msgcontent;
 	@FindBy(how = How.ID, using = "DocumentMode") WebElement DocumentMode;
-
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'successfully')]") public WebElement succMsg;
+	//Download all button
+	@FindBy(how = How.ID, using = "btnDownload") WebElement btnDownloadAll;
+	
 	//browse button for external file
 	@FindBy(how = How.ID, using = "upload") WebElement brwseExternlFile;
 	@FindBy(how = How.ID, using = "previewdata") WebElement previewdata;
@@ -171,8 +175,10 @@ public class pf_WorkflowNew extends pf_genericmethods {
 			Thread.sleep(4000);
 			cl_click(saveNContinueBtn);
 			Thread.sleep(10000);
-			cl_click(dsign);
-			log.info("dsign button is clicked");
+			//cl_click(dsign);
+			cl_click(esignature);
+			log.info("esignature button is clicked");
+			Thread.sleep(3000);
 			int ss = signs.size();
 			Random r = new Random();
 			int n = r.nextInt(ss);
@@ -181,11 +187,33 @@ public class pf_WorkflowNew extends pf_genericmethods {
 				n=n+1;
 			}
 			cl_click(w.findElement(By.xpath(si.replace("#DELIM#",String.valueOf(n)))));
-			Thread.sleep(3000);
+			Thread.sleep(5000);
 			cl_click(signbutton);
-			Thread.sleep(50000);
+			Thread.sleep(20000);
 			log.info("Sign button is picked");
-			b.getScreenshot();
+			cl_click(btnFinalSend);
+			Thread.sleep(2000);
+			try {
+			String msg=succMsg.getText();
+			Thread.sleep(1000);
+			System.out.println("MessageNew: "+msg);
+			cl_click(okBtn);
+			log.info("Ok button is clicked");
+			Thread.sleep(5000);
+			cl_click(btnDownloadAll);
+			Thread.sleep(1000);
+			log.info("Download all button is clicked");
+			cl_click(dashboard);
+			Thread.sleep(4000);
+			log.info("Dashboard button is clicked");
+			}catch(Exception e) {
+				String msg=msgcontent.getText();
+				Thread.sleep(1000);
+				System.out.println("Message: "+msg);
+				cl_click(okBtn);
+				Thread.sleep(5000);
+				
+			}
 		}
 	}
 
@@ -399,6 +427,76 @@ public class pf_WorkflowNew extends pf_genericmethods {
 		cl_click(okBtn);
 		Thread.sleep(2000);
 		Utility.comparelogic(msg, sheetname, scrptName);
+		
+	}
+
+	public void selectWorkfloweSign(WebDriver driver) throws Exception {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+		String wfname=Utility.getpropertydetails("FlexiWorkflowName");
+		WebElement fe = w.findElement(By.xpath(selectWf.replace("#DELIM#",String.valueOf(wfname))));		
+		js.executeScript("arguments[0].scrollIntoView();",fe);
+		cl_click(fe);
+		Thread.sleep(50000);
+
+		String url=w.getCurrentUrl();
+		System.out.println(url);
+		Thread.sleep(2000);
+
+		cl_click(saveNContinueBtn);
+		System.out.println("Without Signatory,press save and continue button: "+withoutSignSaveBtn.getText());
+		Thread.sleep(1000);
+		cl_click(okBtn);
+		int signatorysize=signatoryList.size();
+
+		System.out.println("signatory: "+signatoryList.size());
+
+		//for having only one doc --Signatory
+		for(int k=1;k<=signatorysize;k++) {
+			cl_click(w.findElement(By.xpath(signatory.replace("#DELIM#",String.valueOf(k)))));					
+			cl_click(w.findElement(By.xpath(signatoryRButton.replace("#DELIM#",String.valueOf(k)))));
+			Thread.sleep(2000);
+			cl_click(applyBtn);
+			Thread.sleep(1000);
+		}
+		Thread.sleep(4000);
+		cl_click(saveNContinueBtn);
+		Thread.sleep(10000);
+		cl_click(esignature);
+		Thread.sleep(4000);
+		int ss = signs.size();
+		Random r = new Random();
+		int n = r.nextInt(ss);
+		if(n == 0) {
+			n=n+1;
+		}
+		Thread.sleep(3000);
+		cl_click(w.findElement(By.xpath(si.replace("#DELIM#",String.valueOf(n)))));
+		Thread.sleep(3000);
+		cl_click(signbutton);
+		Thread.sleep(20000);
+		cl_click(btnFinalSend);
+		Thread.sleep(3000);
+		try {
+			String msg=succMsg.getText();
+			Thread.sleep(1000);
+			System.out.println("MessageNew: "+msg);
+			cl_click(okBtn);
+			log.info("Ok button is clicked");
+			Thread.sleep(5000);
+			cl_click(btnDownloadAll);
+			Thread.sleep(1000);
+			log.info("Download all button is clicked");
+			cl_click(dashboard);
+			Thread.sleep(4000);
+			log.info("Dashboard button is clicked");
+			}catch(Exception e) {
+				String msg=msgcontent.getText();
+				Thread.sleep(1000);
+				System.out.println("Message: "+msg);
+				cl_click(okBtn);
+				Thread.sleep(5000);
+				
+			}
 		
 	}
 

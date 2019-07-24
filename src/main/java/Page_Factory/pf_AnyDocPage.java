@@ -29,12 +29,12 @@ public class pf_AnyDocPage extends pf_genericmethods {
 	
 	@FindBy(how = How.XPATH, using = "//*[@id=\"main-menu-wrapper\"]/a[1]/span") WebElement AnyDoc;
 	@FindBy(how = How.XPATH, using = "//*[@id=\"btnpdfupload\"]") WebElement uploadDoc; 
-	@FindBy(how = How.XPATH, using = "//*[@id=\"li\"]/span[1]") WebElement uploadDocNameSize;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"li_1\"]/span[1]") WebElement uploadDocNameSize;
 	@FindBy(how = How.XPATH, using = "//span[text()='Uploaded']") WebElement uploaded; 
 	@FindBy(how = How.ID, using = "btnStep1Continue") WebElement continueBtn;
 
 	//title
-	@FindBy(how = How.XPATH, using = "//*[@id=\"main-content\"]/section/form/div[1]/div/div/h1") WebElement titleOnlneSign;
+	@FindBy(how = How.XPATH, using = "//*[@id=\"main-content\"]/section/div[1]/div/div/h1") WebElement titleOnlneSign;
 
 	@FindBy(how = How.XPATH, using = " //div[@class='message-box']") WebElement msgBoxBelowReference; 
 
@@ -350,7 +350,7 @@ public class pf_AnyDocPage extends pf_genericmethods {
 		String templateName=Utility.getpropertydetails("AnyDocTemplateName");
 		try {
 		cl_entertext(templateSearch, templateName);
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		et.log(LogStatus.PASS,"Searched with template name in Choose template page- passed");
 		cl_click(w.findElement(By.xpath(selecttemplateSearch.replace("#DELIM#",String.valueOf(templateName)))));
 		Thread.sleep(2000);
