@@ -28,32 +28,32 @@ public class BulkDoc_Script extends Basefunctions {
 		pf_BulkDocument bulk=new pf_BulkDocument(w);
 		
 		if(scriptname.equals("Continueclick")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document continue button click");
 			bulk.bulkSigning(sheetName,scriptname);
 			
 		}
 		//uploading non PDF file
 		else if(scriptname.equals("uploadNonPDF")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document upload NonPDF");
 			File f1=new File(Utility.getpropertydetails("nonPDF"));
 			String path=f1.getAbsolutePath();
 			bulk.uploadNonPDF(path,sheetName,scriptname);
 		}		
 		//uploading PDF file
 		else if(scriptname.equals("saveBtnMsg")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document upload PDF");
 			File f2=new File(Utility.getpropertydetails("PDF"));
 			String pdfpath=f2.getAbsolutePath();
 			bulk.uploadPDF(pdfpath,sheetName,scriptname);
 		}
 
-		//verify select page in template setting
+		/*//verify select page in template setting
 		else if(scriptname.equals("crossBtnMsg")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document verify select page");
 			bulk.verifySelectPage(sheetName,scriptname);
-		}
+		}*/
 		else if (scriptname.equals("browseContinueMsg")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document browse continue button");
 			//upload document
 			bulk.uploadDocument();
 
@@ -63,7 +63,7 @@ public class BulkDoc_Script extends Basefunctions {
 			bulk.browseContinue(sheetName,scriptname);
 		}
 		else if(scriptname.equals("folderSourceCBtn")) {
-			et =  es.startTest("Bulk Doc: "+tcid);
+			et =  es.startTest("Bulk Document browse continue button");
 			//verifing browse doc continue btn by passing part A path
 			bulk.browseSourceContinue(sheetName,scriptname);
 		}
