@@ -101,7 +101,7 @@ public class pf_EncryptPage extends pf_genericmethods{
 
 	public void encryptNow(String sheetname,String scriptname) throws Exception {
 		cl_click(souceFoldr);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\partB\\partBFolder.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\Encrypt\\Source\\partBFolder.exe");
 		log.info("Source folder path is passed successfully");
 		Thread.sleep(10000);
 		cl_click(encryptNowBtn);
@@ -116,7 +116,7 @@ public class pf_EncryptPage extends pf_genericmethods{
 
 	public void encryptNowSourceDest(String sheetname,String scriptname) throws Exception {
 		cl_click(destFoldr);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\destFolder\\destfolder.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\Encrypt\\dest\\destfolder.exe");
 		log.info("Destination folder path is passed successfully");
 		Thread.sleep(10000);
 		cl_click(encryptNowBtn);

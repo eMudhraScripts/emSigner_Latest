@@ -82,7 +82,7 @@ public class pf_DecryptPage extends pf_genericmethods {
 
 	public void decryptNow(String sheetname,String scriptname) throws Exception {
 		cl_click(souceFoldr);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\sourceFolder\\source.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\decrypt\\Source\\source.exe");
 		Thread.sleep(6000);
 		cl_click(decryptNow);
 		Thread.sleep(2000);
@@ -91,7 +91,7 @@ public class pf_DecryptPage extends pf_genericmethods {
 		et.log(LogStatus.PASS,"DecryptNow button is clicked only with Source path- passed");
 		Utility.comparelogic(destMsg,sheetname,scriptname);
 		cl_click(destFoldr);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\destFolder\\destfolder.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\decrypt\\dest\\destfolder.exe");
 		Thread.sleep(4000);
 		cl_click(decryptNow);
 		Thread.sleep(20000);
