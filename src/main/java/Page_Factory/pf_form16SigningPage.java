@@ -281,7 +281,7 @@ public class pf_form16SigningPage extends pf_genericmethods {
 		cl_click(sampleCSV);
 		Thread.sleep(2000);
 		et =  es.startTest("Form16 TC_ID: 3708");
-		et.log(LogStatus.PASS," Sample CSV dwnld passed");
+		et.log(LogStatus.PASS," Sample CSV formate dwnld passed");
 		cl_click(csvFolder);
 		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\csvFolder\\csvFile.exe");
 		Thread.sleep(7000);
