@@ -267,7 +267,7 @@ public class pf_form16SigningPage extends pf_genericmethods {
 
 	public void browseABDestContinue(String sheetName,String scriptname) throws Exception {
 		cl_click(destFolder);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\destFolder\\destfolder.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\Merge\\destfolder.exe");
 		Thread.sleep(6000);
 		cl_click(browseContinueBtn);
 		Thread.sleep(1000);
@@ -340,7 +340,7 @@ public class pf_form16SigningPage extends pf_genericmethods {
 		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\partBFolder\\new.exe");
 		Thread.sleep(6000);
 		cl_click(destFolder);
-		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\destFolder\\destfolder.exe");
+		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\MergeChoseTemplte\\destfolder.exe");
 		Thread.sleep(6000);
 		cl_click(csvFolder);
 		Runtime.getRuntime().exec("D:\\sindhu\\HPEdrive\\Selenium Scripts\\autoit scripts\\csvFolder\\csvFile.exe");
