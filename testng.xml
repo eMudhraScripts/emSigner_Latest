@@ -3,7 +3,7 @@
 <suite name="Suite" parallel="false" thread-count="1">
 	<parameter name="browser" value="ch"></parameter>
 
- 	   <test name="LoginErrCheck">
+ 	    <test name="LoginErrCheck">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -24,9 +24,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.Logout_Script" />	
 		</classes>
-	</test>    
+	</test>  
 	
-	  <test name="createDoc">
+	 <test name="createDoc">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -37,9 +37,9 @@
 			<class name="Scripts.CreateDoc_Script" />
 			
 		</classes>
-	</test>
+	</test> 
 	
-	  <test name="createDoceSign">
+	   <test name="createDoceSign">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -50,7 +50,7 @@
 			<class name="Scripts.CreateDoceSign_Script" />
 			
 		</classes>
-	</test>
+	</test> 
 	
 	  <!-- <test name="Plan">
 		<groups>
@@ -64,7 +64,7 @@
 		</classes>
 	</test>-->
 	
-	 <test name="Form16">
+	  <test name="Form16">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -76,7 +76,7 @@
 		</classes>
 	</test>
 
-	  <test name="Form16ChooseTemp">
+	   <test name="Form16ChooseTemp">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -88,7 +88,7 @@
 		</classes> 
 	</test>
 	
-	   <test name="Encrypt">
+	  <test name="Encrypt">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -98,7 +98,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.Encrypt_Script" />
 		</classes>
-	</test>
+	</test> 
 
 	<test name="Decrypt">
 		<groups>
@@ -110,9 +110,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.Decrypt_Script" />
 		</classes>
-	</test>  
+	</test>
 	
-	 <test name="DecryptMultipleFiles">
+	   <test name="DecryptMultipleFiles">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -122,9 +122,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.DecryptMultipleFiles_Script" />
 		</classes>
-	</test>
+	</test> 
 
-	 <!-- <test name="AnyDoc">
+	<!--<test name="AnyDoc">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -136,7 +136,7 @@
 		</classes>
 	</test>   -->
 	
-	 <test name="UploadDocdsign">
+	  <test name="UploadDocdsign">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -146,7 +146,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.UploadDoc_Script" />
 		</classes>
-	</test> 
+	</test>
 	
 	  <test name="UploadDoceSigntre">
 		<groups>
@@ -158,7 +158,7 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.UploadDoceSigntre_Script" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<test name="UploadDoceSigntreTmplte">
 		<groups>
@@ -169,6 +169,17 @@
 		<classes>
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.UpldDoceSigntreTmplte_Script" />
+		</classes>
+	</test>  
+	<test name="upldDocIntrnlUser">
+		<groups>
+			<run>
+				<include name="SMK" />
+			</run>
+		</groups>
+		<classes>
+			<class name="Scripts.Login_Script" />
+			<class name="Scripts.UpldDocIntrnlUser_Script" />	
 		</classes>
 	</test>  
 	
@@ -196,7 +207,7 @@
 		</classes>
 	</test>-->
 	
-	 <test name="BulkDoc">
+	   <test name="BulkDoc">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -280,7 +291,7 @@
 		</classes>
 	</test>
 	
-	   <test name="workflowDocUpld">
+	    <test name="workflowDocUpld">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -290,9 +301,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.WrkflwsDocUpld_Script" />		
 		</classes>
-	</test> 
+	</test>
 	
-	  <test name="ManageWfFlexi">
+	 <test name="ManageWfFlexi">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -302,9 +313,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.ManageWrkflwFlexi_Script" />
 		</classes>
-	</test>  
+	</test>   
 	
-	 <test name="workflow">
+	  <test name="workflow">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -362,9 +373,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.AdminWFExternalExcel_Script" />
 		</classes>
-	</test> 
+	</test>
 
-	 <test name="wfExcelDraft">
+	  <test name="wfExcelDraft">
 		<groups>
 			<run>
 				<include name="SMK" />
@@ -374,9 +385,9 @@
 			<class name="Scripts.Login_Script" />
 			<class name="Scripts.AdminWFExternalExcelDraft_Script" />
 		</classes>
-	</test>
+	</test> 
 	
-	 <test name="onlineSign">
+	<test name="onlineSign">
 		<groups>
 			<run>
 				<include name="SMK" />

@@ -83,6 +83,10 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 	@FindBy(how = How.ID, using = "btnadhocAddCancel") WebElement bckBtnAddNewSigner; 
 	//back button in add signatory
 	@FindBy(how = How.ID, using = "btnConfCancel") WebElement btnConfCancel; 
+	//signatory search
+	@FindBy(how = How.ID, using = "txtsearch") WebElement signSearch;
+	String firstRdBtn="//span[@class='details']/span[@title='#DELIM#']";
+	
 	
 	//first Radio button(ME)
 	@FindBy(how = How.XPATH, using = "//*[@title='ME']") WebElement radioBtn;
@@ -120,6 +124,14 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 	
 	@FindBy(how = How.ID, using = "btnmsgcancel") WebElement btnmsgcancel;
 	@FindBy(how = How.ID, using = "ddlSignaturePosition") WebElement ddlSignaturePosition;
+	
+	//Dashboard my signature
+	//first doc view button
+	@FindBy(how = How.XPATH, using = "//table[@id='tblPending']/tbody/tr[1]/td[9]/ul[1]/li[1]/a") public WebElement mySignFirstDocViewbtn;
+	@FindBy(how = How.ID, using = "btnDecline") WebElement btnDecline;
+	@FindBy(how = How.ID, using = "txtRemarks") WebElement txtRemarks;
+	@FindBy(how = How.ID, using = "btnOk") WebElement btnOk;
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),'declined.')]") WebElement declineMsg;
 	
 	public pf_UploadDocPage(WebDriver driver) {
 
@@ -596,6 +608,66 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 		cl_click(saveNCntnue);
 		Thread.sleep(3000);
 		
+	}
+
+
+	public void upldDocInternlUser(String doc,String intrlUser) throws Exception {
+		cl_click(AnyDoc);
+		log.info("--Online signing page--");
+		et.log(LogStatus.PASS,"Upload Document present in left menu is clicked- passed");
+		log.info("--Upload PDF document--");
+		cl_entertext(uploadDoc, doc);
+		Thread.sleep(10000);
+		et.log(LogStatus.PASS,"Upload PDF file- passed");
+		cl_click(continueBtn);
+		Thread.sleep(30000);
+		et.log(LogStatus.PASS,"Continue button is clicked after Uploading PDF file- passed");
+		cl_click(addSignatory);
+		Thread.sleep(2000);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign);
+		Thread.sleep(1000);
+		cl_entertext(signSearch, intrlUser);
+		Thread.sleep(2000);
+		cl_click(w.findElement(By.xpath(firstRdBtn.replace("#DELIM#",String.valueOf(intrlUser)))));
+		
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		et.log(LogStatus.PASS,"Apply button is clicked after selecting signatory- passed");
+		Thread.sleep(3000);
+		cl_click(saveNCntnue);
+		log.info("Save button clicked after adding template name");
+		et.log(LogStatus.PASS,"Save and Continue button is clicked after adding signatory and temp Name- passed");
+		Thread.sleep(3000);
+		cl_click(btnFinalSend);
+		Thread.sleep(10000);
+		et.log(LogStatus.PASS,"Send button is clicked- passed");
+		String msg=msgcontent.getText();
+		System.out.println(msg);
+		cl_click(okBtn);
+		Thread.sleep(1000);
+		et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
+		
+	}
+
+
+	public void mySigndocDecline() throws Exception {
+		cl_click(mySignFirstDocViewbtn);
+		Thread.sleep(4000);
+		cl_click(btnDecline);
+		Thread.sleep(4000);
+		cl_entertext(txtRemarks, "test");
+		Thread.sleep(1000);
+		cl_click(btnOk);
+		Thread.sleep(5000);
+		String msg=declineMsg.getText();
+		System.out.println(msg);
+		Thread.sleep(1000);
+		cl_click(okBtn);
+		Thread.sleep(1000);
+		et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
 	}
 
 
