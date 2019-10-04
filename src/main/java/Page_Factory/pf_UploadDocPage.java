@@ -75,6 +75,7 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'Atleast one')]") WebElement crossBtnMsg;
 
 	@FindBy(how = How.XPATH, using = "//a[text()='Signatory  1']") WebElement addSign;
+	@FindBy(how = How.XPATH, using = "//a[text()='Signatory  2']") WebElement addSign2;
 	//+ icon
 	@FindBy(how = How.ID, using = "addnewsigner") WebElement plusIcon;
 	//Select signing type page
@@ -132,6 +133,25 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 	@FindBy(how = How.ID, using = "txtRemarks") WebElement txtRemarks;
 	@FindBy(how = How.ID, using = "btnOk") WebElement btnOk;
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'declined.')]") WebElement declineMsg;
+	
+	//recall
+	@FindBy(how = How.ID, using = "btnRecall") WebElement btnRecall;
+	@FindBy(how = How.ID, using = "txtRecalledRemarks") WebElement txtRecalledRemarks;
+	@FindBy(how = How.ID, using = "btnRecalledOk") WebElement btnRecalledOk;
+	
+	@FindBy(how = How.XPATH, using = "//div[contains(text(),' recalled.')]") WebElement recallMsg;
+	@FindBy(how = How.ID, using = "btnmsgok") WebElement btnmsgok;
+	
+	//recall doc name
+	@FindBy(how = How.XPATH, using = "//span[@class='title dname']") WebElement recallDocName;
+	
+	//recall tab
+	@FindBy(how = How.ID, using = "status-recalled") WebElement recalledTab;
+	@FindBy(how = How.XPATH, using = "//a[text()=' Search']") WebElement recallSearch;
+	@FindBy(how = How.ID, using = "documentName") WebElement documentName;
+	@FindBy(how = How.ID, using = "btnSearch") WebElement btnSearch;
+	
+	@FindBy(how = How.XPATH, using = "//table[@id='tblPendingInformation']/tbody/tr[1]") WebElement recalFrstRec;
 	
 	public pf_UploadDocPage(WebDriver driver) {
 
@@ -668,6 +688,111 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 		cl_click(okBtn);
 		Thread.sleep(1000);
 		et.log(LogStatus.PASS,"Popup ok button is clicked- passed");
+	}
+
+
+	public void upldDocTwoSigntry(String doc, String intrlUser) throws Exception {
+		cl_click(AnyDoc);
+		log.info("--Online signing page--");
+		et.log(LogStatus.PASS,"Upload Document present in left menu is clicked- passed");
+		log.info("--Upload PDF document--");
+		cl_entertext(uploadDoc, doc);
+		Thread.sleep(10000);
+		et.log(LogStatus.PASS,"Upload PDF file- passed");
+		cl_click(continueBtn);
+		Thread.sleep(30000);
+		et.log(LogStatus.PASS,"Continue button is clicked after Uploading PDF file- passed");
+		cl_click(addSignatory);
+		Thread.sleep(2000);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign);
+		Thread.sleep(1000);
+		cl_entertext(signSearch, intrlUser);
+		Thread.sleep(2000);
+		cl_click(w.findElement(By.xpath(firstRdBtn.replace("#DELIM#",String.valueOf(intrlUser)))));
+		
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		et.log(LogStatus.PASS,"Apply button is clicked after selecting signatory- passed");
+		Thread.sleep(3000);
+		cl_click(addSignatory);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign2);
+		Thread.sleep(1000);
+		cl_click(radioBtn);
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		Thread.sleep(2000);
+		cl_click(saveNCntnue);
+		Thread.sleep(3000);
+		cl_click(esign);
+		Thread.sleep(4000);
+		et.log(LogStatus.PASS,"esign radio button is clicked- passed");
+		log.info("dsign radio button is clicked");
+		int ss = signs.size();
+		Random r = new Random();
+		int n = r.nextInt(ss);
+		if(n==0) {
+			n=n+1;
+		}
+		cl_click(w.findElement(By.xpath(si.replace("#DELIM#",String.valueOf(n)))));
+		Thread.sleep(5000);
+		et.log(LogStatus.PASS,"sign is picked- passed");
+		JavascriptExecutor js1 = (JavascriptExecutor)w;
+		js1.executeScript("arguments[0].scrollIntoView();",signbutton);
+		cl_click(signbutton);
+		Thread.sleep(20000);
+		et.log(LogStatus.PASS,"Sign button is clicked after selecting sign- passed");
+		log.info("Sign button is clicked");
+		/*Thread.sleep(3000);
+		cl_click(docLog);
+		Thread.sleep(3000);
+		et.log(LogStatus.PASS,"Doc log is clicked- passed");*/
+		String wfname=workflownum.getText();
+		//System.out.println("wfname"+wfname);
+		cl_click(btnFinalSend);
+		Thread.sleep(9000);
+		et.log(LogStatus.PASS,"Send button is clicked- passed");
+		String msg=msgcontent.getText();
+		System.out.println(msg);
+		Thread.sleep(1000);
+		cl_click(okBtn);
+		Thread.sleep(5000);
+		
+		String rclDocName=recallDocName.getText();
+		System.out.println(rclDocName);
+		Thread.sleep(1000);
+		cl_click(btnRecall);
+		Thread.sleep(3000);
+		cl_entertext(txtRecalledRemarks, "test");
+		Thread.sleep(2000);
+		cl_click(btnRecalledOk);
+		Thread.sleep(3000);
+		String rmsg=recallMsg.getText();
+		System.out.println("Document recalled message: "+rmsg);
+		cl_click(btnmsgok);
+		Thread.sleep(3000);
+		Thread.sleep(2000);		
+		cl_click(dashboard);
+		Thread.sleep(4000);
+		cl_click(recalledTab);
+		Thread.sleep(3000);
+		cl_click(recallSearch);
+		Thread.sleep(2000);
+		cl_entertext(documentName, rclDocName);
+		Thread.sleep(1000);
+		cl_click(btnSearch);
+		Thread.sleep(2000);
+		
+		if(recalFrstRec.isDisplayed()) {
+			System.out.println("Record is present");
+		}else {
+			System.out.println("Record is not present");
+		}
 	}
 
 
