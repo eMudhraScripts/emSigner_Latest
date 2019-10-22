@@ -45,7 +45,9 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 	@FindBy(how = How.XPATH, using = "//*[@id=\"Step1Content\"]/div[1]/div/div[2]/div[1]/p") WebElement upldDocDescptn;
 	
 	@FindBy(how = How.XPATH, using = " //div[@class='message-box']") WebElement msgBoxBelowReference; 
-
+	//Parallel radio button
+	@FindBy(how = How.ID, using = "rbtParallel") WebElement rbtParallel;
+	
 	//message while uploading doc other than pdf
 	@FindBy(how = How.XPATH, using = "//div[contains(text(),'NOTE:Only .PDF document(s)')]") WebElement uploadMessage;
 	@FindBy(how = How.ID, using = "btnmsgok") WebElement okBtn;
@@ -76,6 +78,7 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 
 	@FindBy(how = How.XPATH, using = "//a[text()='Signatory  1']") WebElement addSign;
 	@FindBy(how = How.XPATH, using = "//a[text()='Signatory  2']") WebElement addSign2;
+	@FindBy(how = How.XPATH, using = "//a[text()='Signatory  3']") WebElement addSign3;
 	//+ icon
 	@FindBy(how = How.ID, using = "addnewsigner") WebElement plusIcon;
 	//Select signing type page
@@ -793,6 +796,104 @@ public class pf_UploadDocPage  extends pf_genericmethods {
 		}else {
 			System.out.println("Record is not present");
 		}
+	}
+
+
+	public void upldDocPSigning(String doc, String intrlUser, String adhocUser) throws Exception {
+		cl_click(AnyDoc);
+		log.info("--Online signing page--");
+		et.log(LogStatus.PASS,"Upload Document present in left menu is clicked- passed");
+		log.info("--Upload PDF document--");
+		cl_entertext(uploadDoc, doc);
+		Thread.sleep(10000);
+		et.log(LogStatus.PASS,"Upload PDF file- passed");
+		cl_click(continueBtn);
+		Thread.sleep(30000);
+		et.log(LogStatus.PASS,"Continue button is clicked after Uploading PDF file- passed");
+		cl_click(rbtParallel);
+		Thread.sleep(3000);
+		cl_click(addSignatory);
+		Thread.sleep(2000);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign);
+		Thread.sleep(1000);
+		cl_entertext(signSearch, intrlUser);
+		Thread.sleep(2000);
+		cl_click(w.findElement(By.xpath(firstRdBtn.replace("#DELIM#",String.valueOf(intrlUser)))));
+		
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		et.log(LogStatus.PASS,"Apply button is clicked after selecting signatory- passed");
+		Thread.sleep(3000);
+	
+		cl_click(addSignatory);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign2);
+		Thread.sleep(1000);
+		cl_click(radioBtn);
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		Thread.sleep(2000);
+		
+		Thread.sleep(3000);
+		cl_click(addSignatory);
+		Thread.sleep(2000);
+		et.log(LogStatus.PASS,"Add Signatory button is clicked- passed");
+		log.info("Add signatory is clicked");
+		cl_click(addSign3);
+		Thread.sleep(1000);
+		cl_entertext(signSearch, adhocUser);
+		Thread.sleep(2000);
+		cl_click(w.findElement(By.xpath(firstRdBtn.replace("#DELIM#",String.valueOf(adhocUser)))));
+		
+		Thread.sleep(1000);
+		cl_click(applyBtn);
+		log.info("Apply button clicked after selecting signatory");
+		et.log(LogStatus.PASS,"Apply button is clicked after selecting signatory- passed");
+		Thread.sleep(3000);
+		
+		cl_click(saveNCntnue);
+		Thread.sleep(5000);
+		
+		
+		cl_click(esign);
+		Thread.sleep(4000);
+		et.log(LogStatus.PASS,"esign radio button is clicked- passed");
+		log.info("esignature radio button is clicked");
+		int ss = signs.size();
+		Random r = new Random();
+		int n = r.nextInt(ss);
+		if(n==0) {
+			n=n+1;
+		}
+		cl_click(w.findElement(By.xpath(si.replace("#DELIM#",String.valueOf(n)))));
+		Thread.sleep(5000);
+		et.log(LogStatus.PASS,"sign is picked- passed");
+		JavascriptExecutor js1 = (JavascriptExecutor)w;
+		js1.executeScript("arguments[0].scrollIntoView();",signbutton);
+		cl_click(signbutton);
+		Thread.sleep(20000);
+		et.log(LogStatus.PASS,"Sign button is clicked after selecting sign- passed");
+		log.info("Sign button is clicked");
+		/*Thread.sleep(3000);
+		cl_click(docLog);
+		Thread.sleep(3000);
+		et.log(LogStatus.PASS,"Doc log is clicked- passed");*/
+		String wfname=workflownum.getText();
+		//System.out.println("wfname"+wfname);
+		cl_click(btnFinalSend);
+		Thread.sleep(9000);
+		et.log(LogStatus.PASS,"Send button is clicked- passed");
+		String msg=msgcontent.getText();
+		System.out.println(msg);
+		Thread.sleep(1000);
+		cl_click(okBtn);
+		Thread.sleep(5000);
+		
 	}
 
 
